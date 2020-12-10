@@ -83,7 +83,7 @@ exports.create = function (req, res, next) {
     var url = item.match(imgRegex)[1];
     console.log('found img: ' + url);
 
-    exec('identify ' + url, function (err, stdout, stderr) {
+    execfile('identify ' + url, function (err, stdout, stderr) {
       console.log(err);
       if (err !== null) {
         console.log('Error (' + err + '):' + stderr);
